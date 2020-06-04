@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 
 import Header from '../Header/Header'
@@ -19,8 +20,15 @@ const App = () => {
   return (
     <section className="App">
       <Header />
-      <Search findByLocation={findByLocation}/>
-      <ResultsContainer results={breweryResults}/>
+      <Switch>
+        <Route path="/">
+          <Search findByLocation={findByLocation}/>
+        </Route>
+        <Route path="/results">
+          <ResultsContainer results={breweryResults}/>
+        </Route>
+        {/* error handling! */}
+      </Switch>
     </section>
   );
 }
