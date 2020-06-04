@@ -1,0 +1,9 @@
+header {
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: repeat (5 1fr);
+}
+
+.header-button-section {
+    grid-column: 5 / 6;
+}
