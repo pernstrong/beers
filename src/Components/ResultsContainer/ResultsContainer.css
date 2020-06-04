@@ -1,0 +1,20 @@
+.results-container {
+    background-color: lightgray;
+    width: 90%;
+    height: 80vh;
+    margin: 2% 5%;
+}
+
+.results-container h2 {
+    margin: 2%;
+    font-size: 2rem;
+}
+
+.results-container-display {
+    display: flex;
+    flex: wrap;
+}
+
+.results-container h3 {
+    display: block;
+}

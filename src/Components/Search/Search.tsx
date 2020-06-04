@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Search.css'
 
 interface Props {
@@ -29,7 +30,9 @@ const Search = (props: Props) => {
                     onChange={e => setSearchInput(e.target.value)}
                     onKeyDown={e => e.key === "Enter" && handleClick()}
                 />
-                <button onClick={handleClick}>Search</button>
+                <Link to="/results">
+                    <button onClick={handleClick}>Search</button>
+                </Link>
             </section>
         </section>
     )
