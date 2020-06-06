@@ -1,0 +1,20 @@
+.favorites-container {
+    background-color: lightgray;
+    width: 90%;
+    height: 80vh;
+    margin: 2% 5%;
+}
+
+.favorites-container h2 {
+    margin: 2%;
+    font-size: 2rem;
+}
+
+.favorites-container-display {
+    display: flex;
+    flex: wrap;
+}
+
+.favorites-container h3 {
+    display: block;
+}

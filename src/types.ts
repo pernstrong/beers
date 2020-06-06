@@ -14,3 +14,10 @@ export interface Brewery {
     updated_at: string,
     tag_list: string[]
 }
+
+export interface Note {
+    id: number,
+    note_type: string,
+    title: string,
+    content: string
+}

@@ -1,9 +1,23 @@
 header {
-    border: 1px solid green;
+    border-bottom: 5px solid #040404;
     display: grid;
     grid-template-columns: repeat (5 1fr);
+    color: #040404;
+    /* width: 90%;
+    margin: 0 5%;  */
+}
+
+h1 {
+    margin: 5%;
+}   
+
+.beers-link {
+    color: #040404;
+    text-decoration: none;
+
 }
 
 .header-button-section {
     grid-column: 5 / 6;
 }
+
