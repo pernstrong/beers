@@ -2,6 +2,7 @@ import React from 'react'
 import './NotesDisplay.css'
 import { Note } from '../../types'
 import NoteCard from '../NoteCard/NoteCard'
+import Notes from '../Notes/Notes'
 
 interface Props {
     notes: Note[]
@@ -13,6 +14,8 @@ const NotesDisplay = (props: Props) => {
 
     return (
         <section className="notes-display-section">
+            <h4>Beer Notes</h4>
+            {!props.notes.length && <p>No beer notes...add a note to see it here</p> }
             {allNotes}
         </section>
     )

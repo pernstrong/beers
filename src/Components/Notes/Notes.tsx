@@ -81,8 +81,8 @@ const Notes = (props: Props) => {
                 <MyRating setRating={updateRating} rating={rating}/>
                 <Features setFeatures={setFeatures} features={features}/>
             {/* </RatingContext.Provider> */}
-            <NoteForm addNote={addNote} />
             <NotesDisplay notes={notes} deleteNote={deleteNote}/>
+            <NoteForm addNote={addNote} />
         </section>
     )
 }

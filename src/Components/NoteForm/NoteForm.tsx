@@ -26,6 +26,7 @@ const NoteForm = (props: Props) => {
 
     return (
         <section className="note-form">
+            <h4>Add Note</h4>
             <input 
                 type="text"
                 placeholder="Beer name"
