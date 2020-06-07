@@ -12,7 +12,6 @@ interface Props {
 }
 
 const Notes = (props: Props) => {
-    // const { rating, features } = props
     const [ notes, updateNotes ] = useState<Note[]>([])
     const [ rating, updateRating ] = useState('not rated')
     const [ features, updateFeatures ] = useState<string[]>([])
@@ -26,6 +25,27 @@ const Notes = (props: Props) => {
         updateNotes(filteredNotes)
     }
 
+    const setFeatures = (feature: string) => {
+      if (features.includes(feature)) {
+          const filteredFeatures = features.filter(f => f !== feature)
+          updateFeatures(filteredFeatures)
+      } else {
+        updateFeatures(prev => [...prev, feature])
+      }
+  }
+
+  
+  useEffect(() => {
+    const recoveredFeatures = localStorage.getItem(`features-${props.id}`)
+    if (recoveredFeatures) {
+      updateFeatures(JSON.parse(recoveredFeatures))
+    }
+  }, [props.id])
+  
+  useEffect(() => {
+    localStorage.setItem(`features-${props.id}`, JSON.stringify(features))
+    }, [features, props.id])
+
     useEffect(() => {
         const rating = localStorage.getItem(`rating-${props.id}`);
         if (rating) {
@@ -36,6 +56,7 @@ const Notes = (props: Props) => {
       useEffect(() => {
         localStorage.setItem(`rating-${props.id}`, JSON.stringify(rating));
       }, [rating, props.id]);
+
 
     useEffect(() => {
         const notes = localStorage.getItem(`notes-${props.id}`);
@@ -48,17 +69,8 @@ const Notes = (props: Props) => {
         localStorage.setItem(`notes-${props.id}`, JSON.stringify(notes));
       }, [notes, props.id]);
 
-    // const setRating = (rating: string) => {
-    //     updateRating(rating)
-    // }
-    const setFeatures = (feature: string) => {
-        if (features.includes(feature)) {
-            const filteredFeatures = features.filter(f => f !== feature)
-            updateFeatures(filteredFeatures)
-        } else {
-          updateFeatures(prev => [...prev, feature])
-        }
-    }
+  
+    
 
 
 

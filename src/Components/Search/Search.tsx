@@ -12,26 +12,26 @@ const Search = (props: Props) => {
     const [ errorMessage, setErrorMessage ] = useState('')
 
     const handleClick = () => {
-        if (checkInput()) {
+        // if (checkInput()) {
             props.findByLocation(searchInput)
             clearInput()
-        } else {
-            setErrorMessage('Please enter a valid zip code')
-        }
+        // } else {
+            // setErrorMessage('Please enter a valid zip code')
+        // }
     }
 
     const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInput(e.target.value)
-        updateIsInputValid(checkInput())
+        // updateIsInputValid(checkInput())
     }
     
-    const checkInput = () => {
-        if (searchInput.length === 4) {
-            return true
-        } else {
-            return false
-        }
-    }
+    // const checkInput = () => {
+    //     if (searchInput.length === 4) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
 
 
 
@@ -59,7 +59,8 @@ const Search = (props: Props) => {
                     onChange={e => handleChange(e)}
                     // onKeyDown={e => e.key === "Enter" && handleClick()}
                 />
-                <Link to={isInputValid ? "/results" : "/"} >
+                {/* <Link to={isInputValid ? "/results" : "/"} > */}
+                <Link to="/results">
                     <button onClick={handleClick}>Search</button>
                 </Link>
                 <section className="zip-error-section">
