@@ -1,0 +1,9 @@
+.note-card {
+    border: 1px solid green;
+    margin: 2%;
+}
+
+.note-card h4 {
+    width: 30%;
+    border-bottom: 1px solid black;
+}
