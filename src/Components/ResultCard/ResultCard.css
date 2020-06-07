@@ -4,6 +4,13 @@
     margin: 2%;
     width: 20%; 
     text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.result-card h3 {
+    border-bottom: 1px solid black;
 }
 
 .brewery-type {
@@ -11,14 +18,18 @@
 }
 
 .result-card-button-section {
+    width: 100%;
     margin-top: 5%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-top: 1px solid black;
+    padding-top: 10%;
 }
 
 .result-card-button-section button {
-    width: 50%;
+    width: 90%;
     margin: 0 auto; 
+    margin: 0 5%;
 }
 
 .is-favorite-active {
@@ -27,4 +38,8 @@
 
 .is-favorite {
     background-color: gray;
+}
+
+.address {
+    margin: 0;
 }

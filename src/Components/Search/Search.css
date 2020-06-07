@@ -1,38 +1,59 @@
 
 .search-section {
-  /* margin: 2% 0; */
-  height: 80vh;
+  margin: 0 0;
+  /* height: 130vh; */
   width: 100%;
   /* background-image:  */
     /* linear-gradient(rgba(45, 1, 1, 0.49), rgba(45, 1, 1, 0.49)), */
-        /* url("https://images.squarespace-cdn.com/content/v1/5ce1792ec44b110001987970/1562507685084-85VD8B687GF7BUAINR9N/ke17ZwdGBToddI8pDm48kJuI8p5FQJ1Eq-llLbNfaL4UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcVwiMXy0_LgceVXG1CKh67v8u1s0pBIJf9445W-KB9EEl1zKMAtdN8yEjqLo53gl0/WalkingTreeBrewery_BrewEquipment-Grey.jpg?format=2500w"); */
-    /* url("../../images/flight2.png"); */
+       
   /* background-position: middle; */
   background-size: cover;
 }
 
 .search-inputs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* height: 100%; */
+  display: block;
+  
+  /* align-items: center; */
+  /* justify-content: center; */
   position: absolute;
-  bottom: 100%;
-  /* display: ab */
+  top: 60%;
+  left: 35%;
+  width: 100%;
 }
 .search-inputs input {
-    font-size: 1.5rem;
-    width: 20%
-}
-
-.search-inputs button {
-    font-size: 1.5rem;
-    margin: 0 1%
-}
+    font-size: 2rem;
+    width: 20%;
+    border-radius: 5px;
+  }
+  
+  .search-inputs button {
+    font-size: 2rem;
+    margin: 0 3%;
+    border-radius: 5px;
+  }
 
 .background-image {
-  /* height: 80vh; */
+  /* height: 120vh; */
   /* size:  80%; */
   width: 100%;
+  /* position: absolute; */
+  /* top: 1%; */
+
+}
+
+/* .zip-error-section {
+  display: block;
+  /* width: 100% */
+
+.zip-error-message {
+  display: block;
+  width: 40%;
+  text-align: center;
+  font-size: 1.5em;
+  color: red;
+  background-color: white;
+  /* position: absolute;
+  top: 60%;
+  width: 100%; */
 
 }

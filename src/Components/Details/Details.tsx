@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Details.css'
 import { fetchBreweryById } from '../../apiCalls'
 import { Brewery } from '../../types'
 
@@ -35,7 +36,7 @@ const Details = (props: Props) => {
         )
     } else {
         return (
-            <section>
+            <section className="details-section">
                 <h3>{brewery.name}</h3>
                 <p className="brewery-type">type: {brewery.brewery_type}</p>
                 <p>{brewery.street} {brewery.city}, {brewery.state}</p>

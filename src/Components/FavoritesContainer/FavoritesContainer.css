@@ -1,8 +1,13 @@
 .favorites-container {
-    background-color: lightgray;
     width: 90%;
-    height: 80vh;
-    margin: 2% 5%;
+    margin: 0 5%;
+    border-radius: 5px;
+    background-color: #edac3c;
+}
+
+.details-section h3 {
+    font-size: 1.5rem;
+    margin: 2% 0 2% 5%;
 }
 
 .favorites-container h2 {

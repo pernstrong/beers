@@ -3,16 +3,25 @@ import './Features.css'
 
 interface Props {
     setFeatures: (features: string) => void
+    features: String[]
 }
 
 const Features = (props: Props) => {
     // const feature
 
+    const isChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (props.features.includes(e.target.name)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
     return (
         <section className="features-section">
             <h5>Features</h5>
             <section className="feature-option">
-                <input type="checkbox" id="patio" name="patio" onChange={e => props.setFeatures(e.target.name)}/>
+                <input type="checkbox" id="patio" name="patio" onChange={e => props.setFeatures(e.target.name)} checked={e => isChecked(e)} />
                 <label htmlFor="patio">Patio</label>
             </section>
             <section className="feature-option">

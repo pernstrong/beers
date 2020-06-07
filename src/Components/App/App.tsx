@@ -16,6 +16,7 @@ const App = () => {
   const [ breweryResults, setBreweryResults ] = useState<Brewery[]>([])
   const [ favorites, updateFavorites ] = useState<Number[]>([])
   const [ isLoading, setIsLoading ] = useState(false)
+  const [ searchInput, setSearchInput ] = useState('')
 
   // start with just zip code? then include city?
   const findByLocation = async (searchInput: string) => {
@@ -23,6 +24,7 @@ const App = () => {
     const breweryList = await fetchBreweriesByLocation(searchInput)
     setBreweryResults(breweryList)
     setIsLoading(false)
+    setSearchInput(searchInput)
   }
 
   const toggleFavorite = (id: Number): void => {
@@ -46,7 +48,7 @@ const App = () => {
       <Header />
       <Switch>
          <Route path="/results">
-            <ResultsContainer results={breweryResults} isLoading={isLoading} toggleFavorite={toggleFavorite}/>
+            <ResultsContainer results={breweryResults} isLoading={isLoading} toggleFavorite={toggleFavorite} searchInput={searchInput}/>
           </Route>
         <Route path="/favorites">
           <FavoritesContainer favoriteIds={favorites} toggleFavorite={toggleFavorite}/>

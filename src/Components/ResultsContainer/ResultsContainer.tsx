@@ -7,6 +7,7 @@ import ResultCard from '../ResultCard/ResultCard'
 interface Props {
     results: Brewery[]
     isLoading: boolean
+    searchInput: String
     toggleFavorite: (id: Number) => void
 }
 
@@ -16,7 +17,7 @@ const ResultsContainer = (props: Props) => {
 
     return (
         <section className="results-container">
-            <h2>Results</h2>
+            {results.length > 0 ? <h2>Results for {props.searchInput}</h2> : <h2>No breweries found for {props.searchInput}</h2>}
             <section className="results-container-display">
                 {props.isLoading && <p>Loading...</p>}
                     {results}

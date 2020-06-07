@@ -14,7 +14,7 @@ interface Props {
 const Notes = (props: Props) => {
     // const { rating, features } = props
     const [ notes, updateNotes ] = useState<Note[]>([])
-    const [ rating, updateRating ] = useState('No rating')
+    const [ rating, updateRating ] = useState('not rated')
     const [ features, updateFeatures ] = useState<string[]>([])
 
     const addNote = (note: Note) => {
@@ -67,7 +67,7 @@ const Notes = (props: Props) => {
             <h3>Notes</h3>
             {/* <RatingContext.Provider value={rating}> */}
                 <MyRating setRating={updateRating} rating={rating}/>
-                <Features setFeatures={setFeatures} />
+                <Features setFeatures={setFeatures} features={features}/>
             {/* </RatingContext.Provider> */}
             <NoteForm addNote={addNote} />
             <NotesDisplay notes={notes} deleteNote={deleteNote}/>
