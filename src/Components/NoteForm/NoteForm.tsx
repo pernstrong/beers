@@ -28,14 +28,14 @@ const NoteForm = (props: Props) => {
         <section className="note-form">
             <input 
                 type="text"
-                placeholder="title"
+                placeholder="Beer name"
                 name="title"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
             <input 
                 type="text"
-                placeholder="note..."
+                placeholder="notes"
                 name="content"
                 value={content}
                 onChange={e => setContent(e.target.value)}

@@ -18,7 +18,7 @@ describe('Search', () => {
 
         fireEvent.change(getByPlaceholderText('search by zip code'), { target: {value: '80203'}})
 
-        expect(getByText('80220')).toBeInTheDocument()
+        expect(getByText('80203')).toBeInTheDocument()
     })
     
     it.skip('should call the findByLocation method when the search button is clicked', () => {
