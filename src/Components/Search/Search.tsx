@@ -8,8 +8,6 @@ interface Props {
 
 const Search = (props: Props) => {
     const [ searchInput, setSearchInput ] = useState('')
-    const [ isInputValid, updateIsInputValid ] = useState(false)
-    const [ errorMessage, setErrorMessage ] = useState('')
 
     const handleClick = () => {
             props.findByLocation(searchInput)
@@ -26,25 +24,18 @@ const Search = (props: Props) => {
 
     return (
         <section className="search-section">
-            {/* <img src="../../../images/flight.png" alt="flight of beers" className="background-image"/> */}
             <section className="search-inputs">
-                {/* <p>Find a Brewery</p> */}
                 <input 
                     type="text"
                     name="search"
-                    // start with just zip code? then include city?
                     placeholder="search by zip code"
                     value={searchInput}
                     onChange={e => handleChange(e)}
-                    // onKeyDown={e => e.key === "Enter" && handleClick()}
+                    aria-label="brewery search"
                 />
-                {/* <Link to={isInputValid ? "/results" : "/"} > */}
                 <Link to="/results">
                     <button onClick={handleClick}>Search</button>
                 </Link>
-                <section className="zip-error-section">
-                    {errorMessage.length !== 0 && <p className="zip-error-message">{errorMessage}</p>}
-                </section>
             </section>
         </section>
     )

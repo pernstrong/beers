@@ -1,15 +1,10 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
 import { render, fireEvent } from "@testing-library/react"
-// import { mocked } from "ts-jest/utils"
 import ResultCard from "./ResultCard"
-
 import { MemoryRouter } from 'react-router-dom'
 import { testData } from '../../testData'
-// import { fetchBreweriesByLocation } from '../../apiCalls'
-// jest.mock('../../apiCalls')
 
-// mocked(fetchBreweriesByLocation).mockImplementation((id: Number) => Promise.resolve(testData))
 
 describe('ResultCard', () => {
     it('should display the brewery name', () => {

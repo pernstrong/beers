@@ -2,7 +2,6 @@ import React from 'react'
 import './ResultsContainer.css'
 import { Brewery } from '../../types'
 import ResultCard from '../ResultCard/ResultCard'
-// import RatingContext from '../../RatingContext'
 
 interface Props {
     results: Brewery[]
@@ -17,7 +16,7 @@ const ResultsContainer = (props: Props) => {
 
     return (
         <section className="results-container">
-            {results.length > 0 ? <h2>Results for {props.searchInput}</h2> : <h2>No breweries found for {props.searchInput}</h2>}
+            {results.length > 0 ? <h2>{results.length} result(s) for "{props.searchInput}"</h2> : <h2>No breweries found for {props.searchInput}</h2>}
             <section className="results-container-display">
                 {props.isLoading && <p>Loading...</p>}
                     {results}

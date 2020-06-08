@@ -8,7 +8,6 @@ import { testData } from '../../testData'
 import { fetchBreweryById } from '../../apiCalls'
 jest.mock('../../apiCalls')
 
-
  mocked(fetchBreweryById).mockImplementation((id: Number) => Promise.resolve(testData[0]))
 
  describe('FavoritesContainer', () => { 

@@ -1,0 +1,14 @@
+.note-form h4 {
+    margin: 0 0 2% 0;
+}
+
+.note-form input {
+    font-size: 1.5rem;
+    margin: 2%;
+}
+
+.note-form button {
+    font-size: 1.5rem;
+    display: block;
+    margin: 2%;
+}

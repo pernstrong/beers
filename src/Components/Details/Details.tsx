@@ -5,7 +5,6 @@ import { Brewery } from '../../types'
 
 import Notes from '../Notes/Notes'
 
-
 interface Props {
     id: Number
 }

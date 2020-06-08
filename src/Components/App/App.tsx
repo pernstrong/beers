@@ -10,7 +10,6 @@ import Details from '../Details/Details'
 
 import { fetchBreweriesByLocation } from "../../apiCalls"
 import { Brewery } from '../../types'
-import RatingContext from '../../RatingContext';
 
 const App = () => {
   const [ breweryResults, setBreweryResults ] = useState<Brewery[]>([])
@@ -18,7 +17,6 @@ const App = () => {
   const [ isLoading, setIsLoading ] = useState(false)
   const [ searchInput, setSearchInput ] = useState('')
 
-  // start with just zip code? then include city?
   const findByLocation = async (searchInput: string) => {
     setIsLoading(true)
     const breweryList = await fetchBreweriesByLocation(searchInput)
@@ -45,7 +43,7 @@ const App = () => {
 
   return (
     <section className="App">
-      <Header />
+      <Header favoritesLength={favorites.length}/>
       <Switch>
          <Route path="/results">
             <ResultsContainer results={breweryResults} isLoading={isLoading} toggleFavorite={toggleFavorite} searchInput={searchInput}/>

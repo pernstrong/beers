@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Note } from '../../types'
+import './NoteForm.css'
+
 interface Props {
     addNote: (note: Note) => void
 }
@@ -33,6 +35,7 @@ const NoteForm = (props: Props) => {
                 name="title"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
+                aria-label="beer name"
             />
             <input 
                 type="text"
@@ -40,6 +43,7 @@ const NoteForm = (props: Props) => {
                 name="content"
                 value={content}
                 onChange={e => setContent(e.target.value)}
+                aria-label="beer notes"
             />
             <button onClick={handleClick} >Submit</button>
         </section>

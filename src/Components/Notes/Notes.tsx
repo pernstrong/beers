@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Notes.css'
 import { Note } from '../../types'
-import RatingContext from '../../RatingContext'
-
 import NoteForm from '../NoteForm/NoteForm'
 import NotesDisplay from '../NotesDisplay/NotesDisplay'
 import MyRating from '../MyRating/MyRating'
@@ -33,18 +31,18 @@ const Notes = (props: Props) => {
       } else {
         updateFeatures(prev => [...prev, feature])
       }
-  }
-
-  useEffect(() => {
-    const recoveredFeatures = localStorage.getItem(`features-${props.id}`)
-    if (recoveredFeatures) {
-      updateFeatures(JSON.parse(recoveredFeatures))
     }
-  }, [props.id])
+
+    useEffect(() => {
+      const recoveredFeatures = localStorage.getItem(`features-${props.id}`)
+      if (recoveredFeatures) {
+        updateFeatures(JSON.parse(recoveredFeatures))
+      }
+      }, [props.id])
   
-  useEffect(() => {
-    localStorage.setItem(`features-${props.id}`, JSON.stringify(features))
-    }, [features, props.id])
+    useEffect(() => {
+        localStorage.setItem(`features-${props.id}`, JSON.stringify(features))
+      }, [features, props.id])
 
     useEffect(() => {
         const rating = localStorage.getItem(`rating-${props.id}`);
@@ -65,14 +63,9 @@ const Notes = (props: Props) => {
         }
       }, [props.id]);
     
-      useEffect(() => {
+    useEffect(() => {
         localStorage.setItem(`notes-${props.id}`, JSON.stringify(notes));
       }, [notes, props.id]);
-
-  
-    
-
-
 
     return (
         <section>
@@ -82,10 +75,12 @@ const Notes = (props: Props) => {
                 <MyRating setRating={updateRating} rating={rating}/>
                 <Features setFeatures={setFeatures} features={features}/>
               </section>
-              {/* <section className="notes-display"> */}
+              <section className="notes-display">
                 <NotesDisplay notes={notes} deleteNote={deleteNote}/>
+              </section>
+              <section className="add-note-section">
                 <NoteForm addNote={addNote} />
-              {/* </section> */}
+              </section>
             </section>
         </section>
     )

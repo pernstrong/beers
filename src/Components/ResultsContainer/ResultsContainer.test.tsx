@@ -1,6 +1,6 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
-import { render, waitFor } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import ResultsContainer from "./ResultsContainer"
 import { testData } from '../../testData'
 import { MemoryRouter } from 'react-router-dom'
