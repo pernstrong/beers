@@ -1,4 +1,9 @@
 .feature-option {
     display: inline-block;
-    margin: 1%;
+    margin: 1% 5%;
+}
+
+.features-section h5 {
+    font-size: 1.5rem;
+    margin: 5% 0 0 5%;
 }

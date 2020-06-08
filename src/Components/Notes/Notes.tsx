@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Notes.css'
 import { Note } from '../../types'
 import RatingContext from '../../RatingContext'
 
@@ -74,12 +75,18 @@ const Notes = (props: Props) => {
 
 
     return (
-        <section className="notes-section">
-            <h3>Notes</h3>
-            <MyRating setRating={updateRating} rating={rating}/>
-            <Features setFeatures={setFeatures} features={features}/>
-            <NotesDisplay notes={notes} deleteNote={deleteNote}/>
-            <NoteForm addNote={addNote} />
+        <section>
+            <h3 id="notes-header">My Notes</h3>
+            <section className="notes-section">
+              <section className="rating-features">
+                <MyRating setRating={updateRating} rating={rating}/>
+                <Features setFeatures={setFeatures} features={features}/>
+              </section>
+              {/* <section className="notes-display"> */}
+                <NotesDisplay notes={notes} deleteNote={deleteNote}/>
+                <NoteForm addNote={addNote} />
+              {/* </section> */}
+            </section>
         </section>
     )
 }

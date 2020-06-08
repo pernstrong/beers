@@ -1,8 +1,9 @@
 
 .search-section {
-  margin: 0 0;
-  /* height: 130vh; */
+  margin: 0% 0;
+  height: 90vh;
   width: 100%;
+  background-image: url('https://img.grouponcdn.com/iam/39R5YtsobSdayog9ZeVtokXWQEDP/39-2048x1229/v1/c700x420.jpg');
   /* background-image:  */
     /* linear-gradient(rgba(45, 1, 1, 0.49), rgba(45, 1, 1, 0.49)), */
        
@@ -16,9 +17,17 @@
   /* align-items: center; */
   /* justify-content: center; */
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 35%;
   width: 100%;
+}
+
+.search-inputs p{
+  /* color: black; */
+  font-size: 3rem;
+  margin: 0;
+  /* text-align: center; */
+
 }
 .search-inputs input {
     font-size: 2rem;

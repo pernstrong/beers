@@ -26,8 +26,9 @@ const Search = (props: Props) => {
 
     return (
         <section className="search-section">
-            <img src="../../../images/flight.png" alt="flight of beers" className="background-image"/>
+            {/* <img src="../../../images/flight.png" alt="flight of beers" className="background-image"/> */}
             <section className="search-inputs">
+                {/* <p>Find a Brewery</p> */}
                 <input 
                     type="text"
                     name="search"

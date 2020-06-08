@@ -14,7 +14,7 @@ const NotesDisplay = (props: Props) => {
 
     return (
         <section className="notes-display-section">
-            <h4>Beer Notes</h4>
+            <h4 className="notes-display-title">Beer Notes</h4>
             {!props.notes.length && <p>No beer notes...add a note to see it here</p> }
             {allNotes}
         </section>

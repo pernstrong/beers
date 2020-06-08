@@ -4,9 +4,13 @@
     margin: 2%;
     width: 20%; 
     text-align: center;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #edac3c;
     border-radius: 5px;
     padding: 1%;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .result-card h3 {

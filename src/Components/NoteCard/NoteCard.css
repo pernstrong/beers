@@ -1,9 +1,19 @@
 .note-card {
-    border: 1px solid green;
-    margin: 2%;
+    border: 1px solid black;
+    margin: 2% 0;
+    width: 100%;
 }
 
 .note-card h4 {
     width: 30%;
     border-bottom: 1px solid black;
+    margin: 1% 5%
+}
+
+.note-card p {
+    margin: 1% 5%
+}
+
+.note-card button {
+    margin-left: 70%;
 }
