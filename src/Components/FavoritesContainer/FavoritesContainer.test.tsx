@@ -1,32 +1,41 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
 import { render, fireEvent, waitFor } from "@testing-library/react"
+import { mocked } from "ts-jest/utils"
 import FavoritesContainer from "./FavoritesContainer"
+import { MemoryRouter } from 'react-router-dom'
 import { testData } from '../../testData'
+import { fetchBreweryById } from '../../apiCalls'
+jest.mock('../../apiCalls')
 
-describe('FavoritesContainer', () => { 
+ mocked(fetchBreweryById).mockImplementation((id: Number) => Promise.resolve(testData[0]))
+
+ describe('FavoritesContainer', () => { 
 
     it('should have a favorites title', async () => {
         const mockToggleFavorites = jest.fn()
         const { getByText } = render
         (<FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/>)
         
-        // const favorites = await waitFor(() => getByText('Favorites'))
         const favorites = getByText('Favorites')
-        expect(favorites).toBeInTheDocument()
+        await waitFor(() => expect(favorites).toBeInTheDocument())
     })
 
-    it('should let the use know if there are no favorites', () => {
+    it('should let the use know if there are no favorites', async () => {
         const mockToggleFavorites = jest.fn()
         const { getByText } = render(<FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/>)
         
-        expect(getByText('Add some favorites to see them here!')).toBeInTheDocument()
+        await waitFor(() => expect(getByText('Add some favorites to see them here!')).toBeInTheDocument())
     })
     
-    it.skip('should display the favorites info', () => {
+    it('should display the favorites info', async () => {
         const mockToggleFavorites = jest.fn()
         const { getByText } = render
-        (<FavoritesContainer favoriteIds={[1, 2]} toggleFavorite={mockToggleFavorites}/>)
-        // need to add favorites mocked data
+        (<MemoryRouter><FavoritesContainer favoriteIds={[1]} toggleFavorite={mockToggleFavorites}/></MemoryRouter>)
+
+        await waitFor(() => getByText("Dave's Brewhouse of Pain"))
+
+        expect(getByText("Dave's Brewhouse of Pain")).toBeInTheDocument()
+        expect(getByText("My Rating: not rated")).toBeInTheDocument()
     })
 })

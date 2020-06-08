@@ -16,15 +16,29 @@ describe('NoteForm', () => {
         
         expect(getByText('Submit')).toBeInTheDocument()
     })
+
+    it('should display the text as it is entered in the inputs', () => {
+        const { getByDisplayValue, getByPlaceholderText } = render(<NoteForm addNote={() => null}/>)
+        
+        fireEvent.change(getByPlaceholderText('Beer name'), {target: {value: 'Pomona\'s Art'},})
+        fireEvent.change(getByPlaceholderText('notes'), {target: {value: 'delicious'},})
+       
+        expect(getByDisplayValue('Pomona\'s Art')).toBeInTheDocument()
+        expect(getByDisplayValue('delicious')).toBeInTheDocument()
+
+    })
     
-    it.skip('should call the addNote button with the correct arguments when submit is clicked', () => {
-        const { getByText, getByPlaceholderText } = render(<NoteForm addNote={() => null}/>)
+    it('should call the addNote button with the correct arguments when submit is clicked', () => {
+        const mockAddNote = jest.fn()
+        Date.now = jest.fn().mockImplementation(() => 12345)
+
+        const { getByText, getByPlaceholderText } = render(<NoteForm addNote={mockAddNote}/>)
         
         fireEvent.change(getByPlaceholderText('Beer name'), {target: {value: 'Pomona\'s Art'},})
         fireEvent.change(getByPlaceholderText('notes'), {target: {value: 'delicious'},})
         fireEvent.click(getByText('Submit'))
         
-        // need to mock out Date.now()
+        expect(mockAddNote).toHaveBeenCalledWith({id: 12345, note_type: "text", title: 'Pomona\'s Art', content: 'delicious'})
         
     })
 })

@@ -1,0 +1,17 @@
+.my-rating label {
+    font-size: 1.4rem;
+    margin: 5% 5%;
+    font-weight: bold;
+}
+
+.my-rating select {
+    font-size: 1rem;
+    margin: 0 5%;
+}
+
+.my-rating p {
+    display: inline;
+    font-size: 1rem;
+    margin: 2% 5%;
+    display: block;
+}

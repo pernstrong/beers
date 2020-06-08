@@ -1,10 +1,10 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
-import { render, fireEvent } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import Notes from "./Notes"
 
 describe('Notes', () => {
-    it('should display a notes header', () => {
+    it('should display a notes title', () => {
         const { getByText } = render(<Notes id={1}/>)
         
         expect(getByText('Notes')).toBeInTheDocument()
@@ -28,4 +28,6 @@ describe('Notes', () => {
         
         expect(getByPlaceholderText('Beer name')).toBeInTheDocument()
     })
+
+    
 })

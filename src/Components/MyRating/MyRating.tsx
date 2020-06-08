@@ -1,4 +1,5 @@
 import React from 'react'
+import './MyRating.css'
 
 interface Props {
     setRating: (rating: string) => void
@@ -9,9 +10,9 @@ const MyRating = (props: Props) => {
 
     return (
         <section className="my-rating">
-            <label htmlFor="my-rating">My Rating: {props.rating ? props.rating : 'no rating'}</label>
+            <label htmlFor="my-rating">My Rating: {props.rating ? props.rating : 'not rated'}</label>
             <select name="my-rating" id="my-rating" onChange={e => props.setRating(e.target.value)}>
-                <option value=''></option>
+                <option value=''>Update Rating</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>

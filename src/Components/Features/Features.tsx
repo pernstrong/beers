@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Features = (props: Props) => {
-    // const feature
 
     const isChecked = (name: String) => {
         if (props.features.includes(name)) {
@@ -33,16 +32,16 @@ const Features = (props: Props) => {
                 <label htmlFor="Kid-friendly">Kid-friendly</label>
             </section>
             <section className="feature-option">
-                <input type="checkbox" id="kitchen" name="kitchen" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("kitchen")}/>
-                <label htmlFor="kitchen">Kitchen</label>
+                <input type="checkbox" id="wine" name="wine" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("wine")}/>
+                <label htmlFor="wine">Wine</label>
             </section>
             <section className="feature-option">
                 <input type="checkbox" id="food-trucks" name="food-trucks" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("food-trucks")}/>
                 <label htmlFor="food-trucks">Food Trucks</label>
             </section>
             <section className="feature-option">
-                <input type="checkbox" id="wine" name="wine" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("wine")}/>
-                <label htmlFor="wine">Wine</label>
+                <input type="checkbox" id="kitchen" name="kitchen" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("kitchen")}/>
+                <label htmlFor="kitchen">Kitchen</label>
             </section>
             <section className="feature-option">
                 <input type="checkbox" id="cider" name="cider" onChange={e => props.setFeatures(e.target.name)} checked={isChecked("cider")}/>

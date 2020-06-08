@@ -3,10 +3,10 @@ import './Header.css'
 import { NavLink, Link } from 'react-router-dom'
 
 interface Props {
-
+    favoritesLength: Number
 }
 
-const Header = () => {
+const Header = (props: Props) => {
 
     return (
         <header>
@@ -15,7 +15,7 @@ const Header = () => {
             </Link>
             <section className="header-button-section">
                 <NavLink to="/favorites">
-                  <button>My Favorites</button>
+                  <button>My Favorites ({props.favoritesLength})</button>
                 </NavLink>
             </section>
         </header>

@@ -1,8 +1,7 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './ResultCard.css'
 import { Brewery } from '../../types'
 import { Link } from 'react-router-dom'
-import RatingContext from '../../RatingContext'
 
 interface Props {
     result: Brewery
@@ -30,7 +29,7 @@ const ResultCard = (props: Props) => {
         if (rating) {
           updateRating(JSON.parse(rating));
         }
-      }, [props.result.id]);
+    }, [props.result.id]);
 
     useEffect(() => {
       const favorites = localStorage.getItem("favorites");
@@ -52,9 +51,9 @@ const ResultCard = (props: Props) => {
             <p>My Rating: {rating}</p>
             <section className="result-card-button-section">
                 <Link to={link}>
-                    <button>Details</button>
+                    <button className="details-button">Details</button>
                 </Link>
-                <button onClick={handleClick} className={buttonClass()}>Fav</button>
+                <button onClick={handleClick} className={buttonClass()}>Favorite</button>
             </section>
 
         </section>

@@ -1,0 +1,18 @@
+#notes-header {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.notes-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.rating-features {
+    border-right: 1px solid black;
+}
+
+.notes-display {
+    margin: 0 2%;
+    border-right: 1px solid black;
+}
