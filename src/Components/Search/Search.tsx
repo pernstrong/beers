@@ -12,35 +12,13 @@ const Search = (props: Props) => {
     const [ errorMessage, setErrorMessage ] = useState('')
 
     const handleClick = () => {
-        // if (checkInput()) {
             props.findByLocation(searchInput)
             clearInput()
-        // } else {
-            // setErrorMessage('Please enter a valid zip code')
-        // }
     }
 
     const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchInput(e.target.value)
-        // updateIsInputValid(checkInput())
     }
-    
-    // const checkInput = () => {
-    //     if (searchInput.length === 4) {
-    //         return true
-    //     } else {
-    //         return false
-    //     }
-    // }
-
-
-
-    // const checkForNumbers = () => {
-    //     searchInput.split('').every(el => {
-    //         var reg = /^\d+$/;
-
-    //     })
-    // }
 
     const clearInput = () => {
         setSearchInput('')
@@ -54,7 +32,7 @@ const Search = (props: Props) => {
                     type="text"
                     name="search"
                     // start with just zip code? then include city?
-                    placeholder="seach by zip code"
+                    placeholder="search by zip code"
                     value={searchInput}
                     onChange={e => handleChange(e)}
                     // onKeyDown={e => e.key === "Enter" && handleClick()}

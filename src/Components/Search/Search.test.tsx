@@ -1,29 +1,35 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
 import { render, fireEvent } from "@testing-library/react"
+import { MemoryRouter } from 'react-router-dom'
 import Search from "./Search"
 
 describe('Search', () => {
     
-    it.skip('should have a search text input', () => {
+    it('should have a search text input', () => {
         const mockFindByLocation = jest.fn()
-        const { getByPlaceholderText } = render(<Search findByLocation={mockFindByLocation} />)
+        const { getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
         
         expect(getByPlaceholderText('search by zip code')).toBeInTheDocument()
     })
     
-    it.skip('should display text as it is entered', () => {
+    it('should display text as it is entered', () => {
         const mockFindByLocation = jest.fn()
-        const { getByText, getByPlaceholderText } = render(<Search findByLocation={mockFindByLocation} />)
+        const { getByDisplayValue, getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
 
         fireEvent.change(getByPlaceholderText('search by zip code'), { target: {value: '80203'}})
-
-        expect(getByText('80203')).toBeInTheDocument()
+        
+        expect(getByDisplayValue('80203')).toBeInTheDocument()
     })
     
-    it.skip('should call the findByLocation method when the search button is clicked', () => {
+    it('should call the findByLocation method when the search button is clicked', () => {
         const mockFindByLocation = jest.fn()
-        const { getByText } = render(<Search findByLocation={mockFindByLocation} />)
+        const { getByText, getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
+        
+        fireEvent.change(getByPlaceholderText('search by zip code'), { target: {value: '80203'}})
+        fireEvent.click(getByText('Search'))
+
+        expect(mockFindByLocation).toHaveBeenCalledWith("80203")
 
     })
 })

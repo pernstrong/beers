@@ -10,7 +10,7 @@ interface Props {
 }
 
 const NotesDisplay = (props: Props) => {
-    const allNotes = props.notes.map(note => <NoteCard note={note} deleteNote={props.deleteNote}/>)
+    const allNotes = props.notes.map(note => <NoteCard note={note} deleteNote={props.deleteNote} key={note.id}/>)
 
     return (
         <section className="notes-display-section">

@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Features = (props: Props) => {
-    // const feature
 
     const isChecked = (name: String) => {
         if (props.features.includes(name)) {

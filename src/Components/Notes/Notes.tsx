@@ -34,7 +34,6 @@ const Notes = (props: Props) => {
       }
   }
 
-  
   useEffect(() => {
     const recoveredFeatures = localStorage.getItem(`features-${props.id}`)
     if (recoveredFeatures) {
@@ -77,10 +76,8 @@ const Notes = (props: Props) => {
     return (
         <section className="notes-section">
             <h3>Notes</h3>
-            {/* <RatingContext.Provider value={rating}> */}
-                <MyRating setRating={updateRating} rating={rating}/>
-                <Features setFeatures={setFeatures} features={features}/>
-            {/* </RatingContext.Provider> */}
+            <MyRating setRating={updateRating} rating={rating}/>
+            <Features setFeatures={setFeatures} features={features}/>
             <NotesDisplay notes={notes} deleteNote={deleteNote}/>
             <NoteForm addNote={addNote} />
         </section>

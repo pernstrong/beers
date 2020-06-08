@@ -21,7 +21,7 @@ export const testData = [{
     street: "2 Avenue Street ",
     city: "Aurora",
     state: "Colorado",
-    postal_code: "80215",
+    postal_code: "80220",
     country: "United States",
     longitude: "-122.2698881",
     latitude: "37.807739",
