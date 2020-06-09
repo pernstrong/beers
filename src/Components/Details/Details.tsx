@@ -7,6 +7,8 @@ import Notes from '../Notes/Notes'
 
 interface Props {
     id: Number
+    isFavorite: Boolean
+    toggleFavorite: (id: Number) => void
 }
 
 const Details = (props: Props) => {
@@ -44,7 +46,7 @@ const Details = (props: Props) => {
                     <p>{formatPhone(brewery.phone)}</p>
                     <a href={`${brewery.website_url}`}>{brewery.name} Website</a>
                 </section>
-                <Notes id={brewery.id}/>
+                <Notes id={brewery.id} isFavorite={props.isFavorite} toggleFavorite={props.toggleFavorite}/>
             </section>
         )
     }

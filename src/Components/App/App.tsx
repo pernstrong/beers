@@ -60,6 +60,8 @@ const App = () => {
             return (
               <Details 
                 id={id}
+                isFavorite={favorites.includes(Number(id))}
+                toggleFavorite={toggleFavorite}
               />
             );
           }}></Route>
@@ -70,3 +72,5 @@ const App = () => {
 }
 
 export default App;
+
+

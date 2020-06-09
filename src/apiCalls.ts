@@ -2,7 +2,6 @@ import { locationHandler } from './locationHandler'
 
 export const fetchBreweriesByLocation = async (location: String) => {
     const searchType = locationHandler(location)
-    console.log(searchType)
         const url = `https://api.openbrewerydb.org/breweries?${searchType}=${location}&per_page=50`
         return await fetch(url)
             .then(response => response.json())
