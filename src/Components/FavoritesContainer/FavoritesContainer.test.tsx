@@ -1,6 +1,6 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
-import { render, fireEvent, waitFor } from "@testing-library/react"
+import { render, waitFor } from "@testing-library/react"
 import { mocked } from "ts-jest/utils"
 import FavoritesContainer from "./FavoritesContainer"
 import { MemoryRouter } from 'react-router-dom'
