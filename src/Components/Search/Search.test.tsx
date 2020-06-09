@@ -10,14 +10,14 @@ describe('Search', () => {
         const mockFindByLocation = jest.fn()
         const { getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
         
-        expect(getByPlaceholderText('search by zip code')).toBeInTheDocument()
+        expect(getByPlaceholderText('search by city or zip')).toBeInTheDocument()
     })
     
     it('should display text as it is entered', () => {
         const mockFindByLocation = jest.fn()
         const { getByDisplayValue, getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
 
-        fireEvent.change(getByPlaceholderText('search by zip code'), { target: {value: '80203'}})
+        fireEvent.change(getByPlaceholderText('search by city or zip'), { target: {value: '80203'}})
         
         expect(getByDisplayValue('80203')).toBeInTheDocument()
     })
@@ -26,7 +26,7 @@ describe('Search', () => {
         const mockFindByLocation = jest.fn()
         const { getByText, getByPlaceholderText } = render(<MemoryRouter><Search findByLocation={mockFindByLocation} /></MemoryRouter>)
         
-        fireEvent.change(getByPlaceholderText('search by zip code'), { target: {value: '80203'}})
+        fireEvent.change(getByPlaceholderText('search by city or zip'), { target: {value: '80203'}})
         fireEvent.click(getByText('Search'))
 
         expect(mockFindByLocation).toHaveBeenCalledWith("80203")

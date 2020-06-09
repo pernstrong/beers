@@ -12,7 +12,10 @@ h1 {
 .beers-link {
     color: #fff;
     text-decoration: none;
+}
 
+.beers-link:visited {
+    color: #fff
 }
 
 .header-button-section {
@@ -21,11 +24,12 @@ h1 {
 
 header button {
     font-size: 1.5em;
-    margin: 10% 0% 0 10%;
+    margin: 5% 0% 0 45%;
     color: #fff;
     background-color: black;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     border-radius: 5px;
+    padding: 2%;
 }
 
 

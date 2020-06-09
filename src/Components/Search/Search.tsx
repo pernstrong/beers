@@ -28,7 +28,7 @@ const Search = (props: Props) => {
                 <input 
                     type="text"
                     name="search"
-                    placeholder="search by zip code"
+                    placeholder="search by city or zip "
                     value={searchInput}
                     onChange={e => handleChange(e)}
                     aria-label="brewery search"

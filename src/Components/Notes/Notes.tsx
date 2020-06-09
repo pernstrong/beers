@@ -8,6 +8,8 @@ import Features from '../Features/Features'
 
 interface Props {
     id: Number
+    isFavorite: Boolean;
+    toggleFavorite: (id: Number) => void
 }
 
 const Notes = (props: Props) => {
@@ -74,6 +76,7 @@ const Notes = (props: Props) => {
               <section className="rating-features">
                 <MyRating setRating={updateRating} rating={rating}/>
                 <Features setFeatures={setFeatures} features={features}/>
+                <button className="notes-favorite-button" onClick={() => props.toggleFavorite(props.id)}>{props.isFavorite ? 'Remove Favorite' : 'Add Favorite'}</button>
               </section>
               <section className="notes-display">
                 <NotesDisplay notes={notes} deleteNote={deleteNote}/>

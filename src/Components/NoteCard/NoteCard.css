@@ -1,7 +1,8 @@
 .note-card {
     border: 1px solid black;
-    margin: 2% 0;
-    width: 98%;
+    margin: 2% 2%;
+    padding: 1%;
+    width: 95%;
     background-color: #fff;
     -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);

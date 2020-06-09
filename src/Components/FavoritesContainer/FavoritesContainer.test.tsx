@@ -1,6 +1,6 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
-import { render, fireEvent, waitFor } from "@testing-library/react"
+import { render, waitFor } from "@testing-library/react"
 import { mocked } from "ts-jest/utils"
 import FavoritesContainer from "./FavoritesContainer"
 import { MemoryRouter } from 'react-router-dom'
@@ -15,7 +15,7 @@ jest.mock('../../apiCalls')
     it('should have a favorites title', async () => {
         const mockToggleFavorites = jest.fn()
         const { getByText } = render
-        (<FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/>)
+        (<MemoryRouter><FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/></MemoryRouter>)
         
         const favorites = getByText('Favorites')
         await waitFor(() => expect(favorites).toBeInTheDocument())
@@ -23,9 +23,19 @@ jest.mock('../../apiCalls')
 
     it('should let the use know if there are no favorites', async () => {
         const mockToggleFavorites = jest.fn()
-        const { getByText } = render(<FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/>)
+        const { getByText } = render(<MemoryRouter><FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/></MemoryRouter>)
         
         await waitFor(() => expect(getByText('Add some favorites to see them here!')).toBeInTheDocument())
+    })
+
+    it('should display a back to search button if there are no favorites', async () => {
+        const mockToggleFavorites = jest.fn()
+        const { getByText } = render
+        (<MemoryRouter><FavoritesContainer favoriteIds={[]} toggleFavorite={mockToggleFavorites}/></MemoryRouter>)
+
+        await waitFor(() => expect(getByText('Add some favorites to see them here!')).toBeInTheDocument())
+
+        expect(getByText('Back to Search')).toBeInTheDocument()
     })
     
     it('should display the favorites info', async () => {
