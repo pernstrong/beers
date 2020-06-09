@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
+
+import { fetchBreweriesByLocation } from "../../apiCalls"
+import { Brewery } from '../../types'
 
 import Header from '../Header/Header'
 import Search from '../Search/Search'
 import ResultsContainer from '../ResultsContainer/ResultsContainer'
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer'
 import Details from '../Details/Details'
-
-import { fetchBreweriesByLocation } from "../../apiCalls"
-import { Brewery } from '../../types'
+import Error from '../Error/Error'
 
 const App = () => {
   const [ breweryResults, setBreweryResults ] = useState<Brewery[]>([])
@@ -54,7 +55,7 @@ const App = () => {
         <Route exact path="/">
           <Search findByLocation={findByLocation}/>
         </Route>
-        <Route path="/:id"
+        <Route path="/:id/:name"
           render={({ match }) => {
             const { id } = match.params;
             return (
@@ -65,7 +66,10 @@ const App = () => {
               />
             );
           }}></Route>
-        {/* error handling! */}
+        <Route path="/error"
+          render={() => <Error />}
+        />
+        <Redirect to="/error"/>
       </Switch>
     </section>
   );
