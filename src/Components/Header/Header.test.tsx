@@ -7,14 +7,14 @@
 
  describe('Header', () => {
      it('should display the page title', () => {
-         const { getByText } = render(<MemoryRouter><Header /></MemoryRouter>)
+         const { getByText } = render(<MemoryRouter><Header favoritesLength={0}/></MemoryRouter>)
 
          expect(getByText('Beers?')).toBeInTheDocument()
      })
 
      it('should have a favorites button', () => {
-         const { getByText } = render(<MemoryRouter><Header /></MemoryRouter>)
+         const { getByText } = render(<MemoryRouter><Header favoritesLength={5}/></MemoryRouter>)
 
-         expect(getByText('My Favorites')).toBeInTheDocument()
+         expect(getByText('My Favorites (5)')).toBeInTheDocument()
      })
  })

@@ -9,7 +9,7 @@ describe('ResultsContainer', () => {
     it('should display a results title', () => {
         const { getByText } = render(<MemoryRouter><ResultsContainer results={testData} isLoading={false} searchInput={'80220'} toggleFavorite={() => null}/></MemoryRouter>)
 
-        expect(getByText('Results for 80220')).toBeInTheDocument()
+        expect(getByText('2 result(s) for "80220"')).toBeInTheDocument()
     })
     it('should let the user know if no results were found', () => {
         const { getByText } = render(<MemoryRouter><ResultsContainer results={[]} isLoading={false} searchInput={'80220'} toggleFavorite={() => null}/></MemoryRouter>)

@@ -16,7 +16,7 @@ describe('MyRating', () => {
         const mockSetRating = jest.fn()
         const { getByDisplayValue } = render(<MyRating rating='5' setRating={mockSetRating}/>)
 
-        fireEvent.change(getByDisplayValue(''), { target: { value: '4'}})
+        fireEvent.change(getByDisplayValue('Update Rating'), { target: { value: '4'}})
         
         expect(mockSetRating).toHaveBeenCalledWith('4')
     })

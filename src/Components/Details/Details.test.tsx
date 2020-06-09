@@ -1,6 +1,6 @@
 import React from 'react'
 import "@testing-library/jest-dom/extend-expect"
-import { render, fireEvent, waitFor } from "@testing-library/react"
+import { render, waitFor } from "@testing-library/react"
 import { mocked } from "ts-jest/utils"
 import Details from "./Details"
 import { testData } from '../../testData'
@@ -11,7 +11,7 @@ mocked(fetchBreweryById).mockImplementation((id: Number) => Promise.resolve(test
 
 describe('Details', () => { 
     it('should give basic info on the brewery', async () => {
-        const { getByText } = render(<Details id={1}/>)
+        const { getByText } = render(<Details id={1} isFavorite={false} toggleFavorite={() => {}}/>)
 
         await waitFor(() => getByText('Dave\'s Brewhouse of Pain'))
         
@@ -21,10 +21,11 @@ describe('Details', () => {
     })
     
     it('should render the notes component', async () => {
-        const { getByText } = render(<Details id={1}/>)
+        const { getByText } = render(<Details id={1} isFavorite={false} toggleFavorite={() => {}}/>)
     
         await waitFor(() => getByText('Dave\'s Brewhouse of Pain'))
         
-        expect(getByText('Notes')).toBeInTheDocument()
+        expect(getByText('My Notes')).toBeInTheDocument()
     })
+
 })

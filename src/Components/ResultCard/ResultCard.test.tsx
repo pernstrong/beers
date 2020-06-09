@@ -40,14 +40,14 @@ describe('ResultCard', () => {
     it('should display a favorites button', () => {
         const { getByText } = render(<MemoryRouter><ResultCard result={testData[0]} key={1} toggleFavorite={() => null}/></MemoryRouter>)
         
-        expect(getByText('Fav')).toBeInTheDocument()
+        expect(getByText('Favorite')).toBeInTheDocument()
     })
 
     it('should call the toggleFavorites method when the favorite button is clicked', () => {
         const mockToggleFavorites = jest.fn()
         const { getAllByText } = render(<MemoryRouter><ResultCard result={testData[0]} key={1} toggleFavorite={mockToggleFavorites}/></MemoryRouter>)
 
-        fireEvent.click(getAllByText('Fav')[0])
+        fireEvent.click(getAllByText('Favorite')[0])
 
         expect(mockToggleFavorites).toHaveBeenCalled()
     })
