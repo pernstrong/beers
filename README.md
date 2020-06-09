@@ -13,3 +13,4 @@ Beers is a React application written in TypeScript. It also utilizes React Hooks
 ​
 ​
 ## Screenshots
+![site demonstration](https://media2.giphy.com/media/LM3MfcBnajAnII1HiB/giphy.gif)
