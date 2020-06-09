@@ -17,3 +17,18 @@
 .favorites-container h3 {
     display: block;
 }
+
+.no-favorites-message {
+    font-size: 1.5rem;
+}
+
+.favorites-back-button {
+    font-size: 1.5em;
+    margin: 5% 0% 0 45%;
+    color: #fff;
+    background-color: black;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 2%;
+    width: 100%;
+}

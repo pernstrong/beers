@@ -13,7 +13,7 @@ const NotesDisplay = (props: Props) => {
 
     return (
         <>
-            <h4 className="notes-display-title">Beer Notes</h4>
+            <h4 id="notes-display-title">Beer Notes</h4>
             <section className="notes-display-section">
             {!props.notes.length && <p>No beer notes...add a note to see it here</p> }
              {allNotes}

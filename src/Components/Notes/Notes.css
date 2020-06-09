@@ -3,7 +3,7 @@
     text-align: center;
     color: #fff;
     background-color: black;
-    padding: 1%
+    padding: 1%;
 }
 
 .notes-section {
@@ -12,6 +12,7 @@
 }
 
 .rating-features {
+    padding-top: 2%;
     border-right: 2px solid black;
 }
 

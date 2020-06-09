@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './FavoritesContainer.css'
+import { Link } from 'react-router-dom'
 import { Brewery } from '../../types'
 import { fetchBreweryById } from '../../apiCalls'
 import ResultCard from '../ResultCard/ResultCard'
@@ -27,7 +28,8 @@ const FavoritesContainer = (props: Props) => {
         <section className="favorites-container">
             <h2>Favorites</h2>
             <section className="results-container-display">
-                {!favoritesToDisplay.length && <p>Add some favorites to see them here!</p> }
+                {!favoritesToDisplay.length && <p className="no-favorites-message">Add some favorites to see them here!</p> }
+                {favoritesToDisplay.length === 0 && <Link to="/"><button className="favorites-back-button">Back to Search</button></Link>}
                 {favoritesToDisplay}
             </section>
         </section>

@@ -1,9 +1,10 @@
 .notes-display-section {
     width: 90%;
     height: 30vh;
-    overflow: scroll;    
+    overflow: scroll;  
+    padding-top: 2%;  
 }
 
-.notes-display-title {
-    margin: 0
+#notes-display-title {
+    padding-top: 2%;  
 }

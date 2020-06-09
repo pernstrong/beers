@@ -16,6 +16,13 @@ describe('ResultsContainer', () => {
 
         expect(getByText('No breweries found for 80220')).toBeInTheDocument()
     })
+       
+    it('should display a back to search button if there are no results', () => {
+        const { getByText } = render(<MemoryRouter><ResultsContainer results={[]} isLoading={false} searchInput={'fff'} toggleFavorite={() => null}/></MemoryRouter>
+        )
+
+        expect(getByText('Back to Search')).toBeInTheDocument()
+    })
     
     it('should display some brewery results', () => {
         const { getByText } = render(<MemoryRouter><ResultsContainer results={testData} isLoading={false} searchInput={'80220'} toggleFavorite={() => null}/></MemoryRouter>
