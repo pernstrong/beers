@@ -1,7 +1,7 @@
 header {
     display: grid;
     grid-template-columns: repeat (5 1fr);
-    background: black;
+    background: blue;
 }
 
 h1 {
