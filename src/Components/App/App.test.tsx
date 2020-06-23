@@ -140,7 +140,7 @@ jest.mock('../../apiCalls')
 
         fireEvent.click(getAllByText('Favorite')[0])
 
-        await waitFor(() => getByText('My Favorites (1)'))
+        // await waitFor(() => getByText('My Favorites (1)'))
         
         fireEvent.click(getByText('My Favorites (1)'))
 
