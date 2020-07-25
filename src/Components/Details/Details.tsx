@@ -42,7 +42,6 @@ const Details = (props: Props) => {
                     <h3>{brewery.name}</h3>
                     <p className="brewery-type">type: {brewery.brewery_type}</p>
                     <p>{brewery.street} {brewery.city}, {brewery.state}</p>
-                    {/* <h4>Contact</h4> */}
                     <p>{formatPhone(brewery.phone)}</p>
                     <a href={`${brewery.website_url}`}>{brewery.name} Website</a>
                 </section>
